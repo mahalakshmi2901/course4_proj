@@ -44,7 +44,11 @@ class Dev(Configuration):
       'django.contrib.staticfiles',
       'movies',
       'gh',
+      'django_celery_results',
   ]
+  CELERY_RESULT_BACKEND = "django-db"
+  CELERY_BROKER_URL = "redis://localhost:6379/0"
+
   LOGGING = {
       "version": 1,
       "disable_existing_loggers": False,
